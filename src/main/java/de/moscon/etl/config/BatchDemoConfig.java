@@ -1,6 +1,7 @@
 package de.moscon.etl.config;
 
 import de.moscon.etl.listener.JobCompletionListener;
+import de.moscon.etl.steps.testText.LetterCountDTO;
 import de.moscon.etl.steps.testText.SimpleProcessor;
 import de.moscon.etl.steps.testText.SimpleReader;
 import de.moscon.etl.steps.testText.SimpleWriter;
@@ -38,7 +39,7 @@ public class BatchDemoConfig {
 	private Step testStep() {
 		return stepBuilderFactory
 				.get("testStep1")
-				.<String, String>chunk(1)
+				.<String, LetterCountDTO>chunk(1)
 				.reader(new SimpleReader()).processor(new SimpleProcessor())
 				.writer(new SimpleWriter())
 				.build();

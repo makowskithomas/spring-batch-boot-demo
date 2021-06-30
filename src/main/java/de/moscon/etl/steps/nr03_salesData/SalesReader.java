@@ -21,4 +21,8 @@ public class SalesReader implements ItemReader<Sale> {
 	public Sale read() {
 		return shopSimulator.readProductPos(nextSalesIndex++);
 	}
+
+//	public int getSalesIndex(){
+//		return nextSalesIndex;
+//	}
 }
